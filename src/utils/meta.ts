@@ -42,7 +42,7 @@ export function constructMetadata({
 			},
 		],
 		// manifest: "/pwa/manifest.json",
-		metadataBase: new URL("https://mikeodnis.com/"),
+		metadataBase: new URL("https://www.coven.fi/"),
 		other: {
 			currentYear: new Date().getFullYear(),
 			timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
