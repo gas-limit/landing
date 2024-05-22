@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 export function constructMetadata({
 	title = "Coven Finance",
 	description = "Coven Finance offers a unique platform for anyone to create, manage, and invest in index tokens composed of a diverse mix of ERC20 tokens, liquidity provider tokens, and lending tokens. Built on the fast and efficient Fantom network, Coven Finance allows seamless portfolio management with cutting-edge features.",
-	image = "/assets/images/og.png",
+	image = "https://www.coven.fi/opengraph-image.png?c0c6b0fdcbbdab27",
 	icons = "/assets/svgs/logo.svg",
 	noIndex = false,
 }: {
