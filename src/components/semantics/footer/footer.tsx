@@ -1,11 +1,12 @@
 "use client";
 import { footer, legalRoutes } from "@/components/constants";
-import { Footer as FooterContainer } from "@/components/templates";
+import { Footer } from "@/components/templates";
 import React from "react";
+import Wave from "react-wavify";
 import { FooterCopyright, FooterSection, SocialLinks } from ".";
 import { Logo } from "../Logo";
 
-export const Footer = ({
+export const FooterBar = ({
 	name,
 	description,
 }: Readonly<{
@@ -14,12 +15,23 @@ export const Footer = ({
 }>) => {
 	return (
 		<>
-			<FooterContainer className="bg-[#E0E0E0]">
+			<Footer className="bg-[#E0E0E0] w-[100dvw]bottom-0">
+				<Wave
+					fill="#5E4978"
+					paused={false}
+					style={{ display: "flex" }}
+					options={{
+						height: 20,
+						amplitude: 20,
+						speed: 0.15,
+						points: 3,
+					}}
+				/>
 				<div className="max-w-screen-xl px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24">
 					<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 						<div>
 							<Logo
-								size={100}
+								size={`28`}
 								className={`sm:justify-start w-fit select-none`}
 							/>
 
@@ -46,7 +58,7 @@ export const Footer = ({
 
 					<FooterCopyright name={name!} legalRoutes={legalRoutes} />
 				</div>
-			</FooterContainer>
+			</Footer>
 		</>
 	);
 };

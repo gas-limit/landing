@@ -1,8 +1,13 @@
-type sizes =
+type Sizes =
 	| "0"
+	| "px"
+	| "0.5"
 	| "1"
+	| "1.5"
 	| "2"
+	| "2.5"
 	| "3"
+	| "3.5"
 	| "4"
 	| "5"
 	| "6"
@@ -31,15 +36,3 @@ type sizes =
 	| "96";
 
 type Index = string | number;
-
-interface SubLinkProps {
-	name: string;
-	href: string;
-	icon: JSX.Element;
-}
-
-interface LinkProps {
-	name: string;
-	href: string;
-	subLinks?: SubLinkProps[];
-}

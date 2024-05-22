@@ -1,6 +1,7 @@
 "use client";
 
 import { Events, ThemeProvider } from "@/components/provider";
+import { Semantics } from "@/components";
 import type React from "react";
 export default function Providers({
 	children,
@@ -22,7 +23,7 @@ export default function Providers({
 				[Events, {}],
 			]}
 		>
-			{children}
+			<Semantics className="">{children}</Semantics>
 		</ProviderStack>
 	);
 }

@@ -14,7 +14,7 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
 	return (
 		<Header
-			className="relative h-[50dvh] bg-center bg-cover"
+			className="w-screen h-[50dvh] bg-center bg-cover border border-red-400"
 			style={{
 				backgroundImage: `url(${image})`,
 			}}

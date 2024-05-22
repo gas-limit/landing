@@ -8,7 +8,7 @@ type ArticleProps = React.ComponentPropsWithoutRef<"article"> & {
 	variant?: "primary" | "secondary";
 };
 
-const Article = React.forwardRef<
+const CustomArticle = React.forwardRef<
 	HTMLElement,
 	React.HTMLAttributes<HTMLElement>
 >(({ className, style, variant, ...props }: ArticleProps, ref) => (
@@ -32,6 +32,6 @@ const ArticleVariants = cva("bg-foreground-800 text-foreground-800", {
 	},
 });
 
-Article.displayName = "Article";
+CustomArticle.displayName = "Article";
 
-export { Article };
+export { CustomArticle };

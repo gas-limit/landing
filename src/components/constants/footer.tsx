@@ -18,6 +18,7 @@ export const legalRoutes: Record<string, string>[] = [
 		href: "/accessibility",
 	},
 ];
+
 export type LegalRoutesType = typeof legalRoutes;
 
 export type SocialLink = {

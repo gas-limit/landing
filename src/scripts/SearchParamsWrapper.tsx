@@ -1,21 +1,23 @@
-"use client"
+"use client";
 
-import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
 import { pageview } from "@/lib/gtagHelper";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
-function SearchParamsWrapper({ GA_MEASUREMENT_ID }: {
-  GA_MEASUREMENT_ID: string;
+function SearchParamsWrapper({
+	GA_MEASUREMENT_ID,
+}: {
+	GA_MEASUREMENT_ID: string;
 }) {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+	const pathname = usePathname();
+	const searchParams = useSearchParams();
 
-  useEffect(() => {
-    const url = pathname + searchParams.toString();
-    pageview(GA_MEASUREMENT_ID, url);
-  }, [pathname, searchParams, GA_MEASUREMENT_ID]);
+	useEffect(() => {
+		const url = pathname + searchParams.toString();
+		pageview(GA_MEASUREMENT_ID, url);
+	}, [pathname, searchParams, GA_MEASUREMENT_ID]);
 
-  return null;
+	return null;
 }
 
 export default SearchParamsWrapper;

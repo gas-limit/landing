@@ -8,7 +8,7 @@ type PictureProps = React.ComponentPropsWithoutRef<"picture"> & {
 	variant?: "primary" | "secondary";
 };
 
-const Picture = React.forwardRef<HTMLElement, PictureProps>(
+const CustomPicture = React.forwardRef<HTMLElement, PictureProps>(
 	({ className, children, style, variant, ...props }, ref) => {
 		const srcSet = getSrcFromChildImage(children);
 		return (
@@ -37,7 +37,7 @@ const PictureVariants = cva("overflow-hidden", {
 	},
 });
 
-Picture.displayName = "Picture";
+CustomPicture.displayName = "Picture";
 
 const getSrcFromChildImage = (
 	children: React.ReactNode,
@@ -57,4 +57,4 @@ const getSrcFromChildImage = (
 	return src;
 };
 
-export { Picture };
+export { CustomPicture };

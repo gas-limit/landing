@@ -33,7 +33,6 @@ export function constructMetadata({
 				href: icons,
 			},
 		],
-		// manifest: "/pwa/manifest.json",
 		metadataBase: new URL("https://www.coven.fi/"),
 		other: {
 			currentYear: new Date().getFullYear(),

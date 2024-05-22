@@ -1,21 +1,9 @@
-import { FaDiscord, FaTwitter } from "react-icons/fa";
+import { FaDesktop } from "react-icons/fa";
+import type { IconType } from "react-icons/lib";
+interface LinkProps {
+	name: string;
+	href: string;
+	icon: IconType;
+}
 
-export const Links: LinkProps[] = [
-	{ name: "Investors", href: "https://3b3hv4uvdss.typeform.com/to/M0K48KDr" },
-	{
-		name: "Socials",
-		href: "/",
-		subLinks: [
-			{
-				name: "Discord",
-				href: "https://discord.gg/XDqxjWwujD",
-				icon: <FaDiscord className="w-5 h-5" />,
-			},
-			{
-				name: "Twitter",
-				href: "https://twitter.com/TheLeagueDeFi",
-				icon: <FaTwitter className="w-5 h-5" />,
-			},
-		],
-	},
-];
+export const Links: LinkProps[] = [{ name: "App", href: "/", icon: FaDesktop }];

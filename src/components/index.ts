@@ -5,4 +5,4 @@ export * from "./layout";
 export * from "./provider";
 export * from "./semantics";
 export * from "./web";
-export * as Semantic from "./templates";
+export * from "./templates";

@@ -26,31 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			changeFrequency: "yearly",
 			priority: 0.8,
 		},
-		// Cookies
-		{
-			url: "https://www.coven.fi/legal/cookies",
-			lastModified: new Date(),
-			changeFrequency: "yearly",
-			priority: 0.8,
-		},
-		{
-			url: "https://www.coven.fi/legal/cookies/essential",
-			lastModified: new Date(),
-			changeFrequency: "yearly",
-			priority: 0.8,
-		},
-		{
-			url: "https://www.coven.fi/legal/cookies/functional",
-			lastModified: new Date(),
-			changeFrequency: "yearly",
-			priority: 0.8,
-		},
-		{
-			url: "https://www.coven.fi/legal/cookies/statistics",
-			lastModified: new Date(),
-			changeFrequency: "yearly",
-			priority: 0.8,
-		},
 		{
 			url: "https://www.coven.fi/legal/cookies",
 			lastModified: new Date(),

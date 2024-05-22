@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 export const CookieConsent = () => {
 	const [cookieConsent, setCookieConsent] = useState(false);
 	const [isLoaded, setIsLoaded] = useState(false);
-
+	
 	useEffect(() => {
 		const storedCookieConsent = getLocalStorage("cookie_consent", null);
 		setIsLoaded(true);
@@ -18,15 +18,13 @@ export const CookieConsent = () => {
 
 	useEffect(() => {
 		const newValue = cookieConsent ? "granted" : "denied";
-
+		
 		window.gtag("consent", "update", {
 			analytics_storage: newValue,
 		});
-
 		setLocalStorage("cookie_consent", cookieConsent);
-
-		console.log("Cookie Consent: ", cookieConsent);
 	}, [cookieConsent]);
+
 	if (!isLoaded) return null;
 	return (
 		<>
@@ -41,7 +39,7 @@ export const CookieConsent = () => {
 					className={`flex flex-col gap-4 justify-between items-center w-full py-0`}
 				>
 					<div className="text-left">
-						<Link href="/cookies">
+						<Link href="/legal/cookies">
 							<p>
 								This website uses{" "}
 								<span className="font-bold text-sky-400">cookies</span> to offer
