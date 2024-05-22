@@ -1,42 +1,32 @@
 "use client";
+
+import { useCookieConsentStore } from "@/core/store";
+import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 import Script from "next/script";
-import { Suspense } from "react";
-import SearchParamsWrapper from "./SearchParamsWrapper";
-
-export default function GoogleAnalytics({
-	GA_MEASUREMENT_ID,
-}: { GA_MEASUREMENT_ID: string }) {
+export const Scripts = () => {
+	const { cookieConsent } = useCookieConsentStore();
 	return (
 		<>
-			<Suspense fallback={null}>
-				<SearchParamsWrapper GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />
-			</Suspense>
-			<>
-				<Script
-					strategy="afterInteractive"
-					src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-				/>
-				<Script
-					id="google-analytics"
-					strategy="afterInteractive"
-					dangerouslySetInnerHTML={{
-						__html: `
-					window.dataLayer = window.dataLayer || [];
-					function gtag(){dataLayer.push(arguments);}
-					gtag('js', new Date());
-					
-					gtag('consent', 'default', {
-						'analytics_storage': 'granted',
-					});
-					
-					gtag('config', '${GA_MEASUREMENT_ID}', {
-						page_path: window.location.pathname,
-					});
-          `,
-					}}
-				/>
-			</>
+			{cookieConsent && (
+				<>
+					<Head>
+						<Script
+							src={`https://www.googletagmanager.com/gtag/js?id=G-SEDSYB6798`}
+							strategy="afterInteractive"
+						/>
+						<Script id="google-analytics" strategy="afterInteractive">
+							{`
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+						gtag('config', 'G-SEDSYB6798');
+						`}
+						</Script>
+					</Head>
+					<Analytics />
+				</>
+			)}
 		</>
 	);
-}
+};

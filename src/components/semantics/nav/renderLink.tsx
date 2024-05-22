@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { IconType } from "react-icons/lib";
+import type { IconType } from "react-icons/lib";
 
 interface LinkProps {
 	name: string;

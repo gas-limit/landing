@@ -1,4 +1,3 @@
-
 import { constructMetadata, constructViewport } from "@/utils";
 
 export const metadata = constructMetadata({ title: "Terms" });

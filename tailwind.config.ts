@@ -4,7 +4,6 @@ export default {
 	mode: "jit",
 	darkMode: ["class"],
 	content: ["./src/**/*.{ts,tsx}"],
-	prefix: "",
 	theme: {
 		container: {
 			center: true,

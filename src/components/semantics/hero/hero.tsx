@@ -1,29 +1,31 @@
 "use client";
+import { CustomPicture as Picture } from "@/components";
 import { Text, Title } from "@/components/custom";
 import { Article, Header, Section } from "@/components/templates";
+import Image from "next/image";
 import Link from "next/link";
 import type React from "react";
 
 interface HeroProps extends Partial<Record<string, string | string[]>> {}
 
-export const Hero: React.FC<HeroProps> = ({
-	image,
-	title,
-	subtitle,
-	paragraph,
-}) => {
+export const Hero: React.FC<HeroProps> = ({ title, subtitle, paragraph }) => {
 	return (
-		<Header
-			className="w-screen h-[50dvh] bg-center bg-cover border border-red-400"
-			style={{
-				backgroundImage: `url(${image})`,
-			}}
-		>
-			<Section className="max-w-screen-xl px-4 py-32 mx-auto lg:flex lg:h-screen lg:items-center">
-				<Article className="max-w-3xl mx-auto text-center">
+		<Header className="w-screen h-fit bg-center bg-cover border border-red-400">
+			<Section className="max-w-screen-xl px-4 py-32 mx-auto lg:flex lg:h-screen lg:items-center lg:justify-center">
+				<Picture
+					className={`z-[-1] w-full h-full lg:w-1/2 lg:h-full lg:order-2 lg:rounded-lg lg:overflow-hidden`}
+				>
+					<Image
+						src={`/assets/images/landing/hero.png`}
+						alt={`hero image`}
+						width={1920}
+						height={1080}
+					/>
+				</Picture>
+				<Article className="w-full h-full max-w-3xl mx-auto text-center fixed  border border-red-400">
 					<Title
 						h="h1"
-						className="text-3xl font-extrabold text-transparent bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text sm:text-5xl"
+						className="text-3xl font-extrabold text-transparent bg-gradient-to-r from-[#328170] via-blue-500 to-[#4c246e] bg-clip-text sm:text-5xl"
 						title={title as string}
 						subtitle={(subtitle as string) ?? null}
 						subClassName="block mt-4 text-xl font-semibold text-gray-300 sm:text-2xl"

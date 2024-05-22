@@ -1,5 +1,6 @@
 "use client";
 
+import { Nav } from "@/components";
 import { fadeInAnimationVariants } from "@/components/constants/Motion";
 import { Button } from "@/components/ui/button";
 import { Links } from "@/constants/links";
@@ -12,7 +13,6 @@ import { type ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { Logo } from "../Logo";
 import { renderLink } from "./renderLink";
-
 export const Navbar = () => {
 	const router = useRouter();
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -23,11 +23,16 @@ export const Navbar = () => {
 	useEffect(() => {
 		setIsLoaded(true);
 	}, []);
-
+	// bg-gradient-to-b from-[#328170] to-[#4C246E]
 	if (isLoaded && !isMobile) {
 		return (
-			<nav
-				className={`px-10 sticky top-0 z-[99999]`}
+			<Nav
+				className={`
+					px-10 sticky top-0 z-50
+					bg-gradient-to-b from-[#235B4E]/90
+					to-[#235B4E]/10
+					backdrop-blur-lg
+				`}
 			>
 				<motion.div
 					transition={{ duration: 0.5, type: "tween", ease: "easeInOut" }}
@@ -51,7 +56,7 @@ export const Navbar = () => {
 						</motion.div>
 					</div>
 				</motion.div>
-			</nav>
+			</Nav>
 		);
 	}
 

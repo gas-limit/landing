@@ -8,6 +8,7 @@ import { sections } from "@/constants";
 import { Slugify } from "@/utils";
 import Image from "next/image";
 import type React from "react";
+import ProtocolsPanel from "./_sections/ProtocolsPanel";
 
 export default function HomePage() {
 	// await new Promise((resolve) => setTimeout(resolve, 2000)); <- only uncomment if you want a longer loading time
@@ -20,40 +21,48 @@ export default function HomePage() {
 						Yield optimized index tokens on Fantom
 					`}
 			/>
-			{sections.map((section, index) => {
-				const adjustedIndex = index + 1;
-				return (
-					<Section
-						key={Slugify(section.title!)}
-						className={` h-96 flex flex-col `}
-					>
-						<Article
-							className={`
+			<Section
+				className={`
+					flex flex-col justify-center items-center
+				 	prose-lg
+					border border-red-400
+				`}
+			>
+				{sections.map((section, index) => {
+					const adjustedIndex = index + 1;
+					return (
+						<Section
+							key={Slugify(section.title!)}
+							className={` h-96 flex flex-col justify-center items-center`}
+						>
+							<Article
+								className={`
 							flex flex-col justify-start items-center
 							`}
-						>
-							<Title h={`h2`} title={section.title!} className={``} />
-							<AnimatedText text={section.description!} className={``} />
-						</Article>
-						<Slide delay={+adjustedIndex * 0.5}>
-							<Picture
-								className={`
+							>
+								<Title h={`h2`} title={section.title!} className={``} />
+								<AnimatedText text={section.description!} className={``} />
+							</Article>
+							<Slide delay={+adjustedIndex * 0.5}>
+								<Picture
+									className={`
 								
 								`}
-								children={
-									<Image
-										src={`/assets/images/landing/${adjustedIndex}.png`}
-										alt={``}
-										width={300}
-										height={300}
-									/>
-								}
-							/>
-						</Slide>
-					</Section>
-				);
-			})}
-			<Background />
+									children={
+										<Image
+											src={`/assets/images/landing/${adjustedIndex}.png`}
+											alt={``}
+											width={300}
+											height={300}
+										/>
+									}
+								/>
+							</Slide>
+						</Section>
+					);
+				})}
+			</Section>
+			<ProtocolsPanel />
 		</>
 	);
 }

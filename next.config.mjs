@@ -15,10 +15,9 @@ const withPwa = pwa({
 	},
 });
 
-
 /**
  * @type {import("next/dist/server/config").NextConfig}
-*/
+ */
 const config = {
 	typescript: {
 		ignoreBuildErrors: true,
@@ -50,8 +49,11 @@ const finalConfig = withPwa(
 		MillionLint.next({
 			rsc: true,
 			filter: {
-				exclude: ["./src/components/web/CookieConsent.tsx", "./src/lib/gtagHelper.ts"],
-				include: "**/components/**/*.{mtsx,mjsx,tsx,jsx}"
+				exclude: [
+					"./src/components/web/CookieConsent.tsx",
+					"./src/lib/gtagHelper.ts",
+				],
+				include: "**/components/**/*.{mtsx,mjsx,tsx,jsx}",
 			},
 		})(config),
 		millionConfig,

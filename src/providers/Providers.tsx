@@ -1,8 +1,11 @@
 "use client";
 
-import { Events, ThemeProvider } from "@/components/provider";
 import { Semantics } from "@/components";
+import { CookieConsent, ScrollToTop } from "@/components";
+import { Events, ThemeProvider } from "@/components/provider";
+import { Scripts } from "@/scripts";
 import type React from "react";
+
 export default function Providers({
 	children,
 }: Readonly<{
@@ -11,6 +14,7 @@ export default function Providers({
 	return (
 		<ProviderStack
 			providers={[
+				[Events, {}],
 				[
 					ThemeProvider,
 					{
@@ -20,13 +24,29 @@ export default function Providers({
 						defaultTheme: "system",
 					},
 				],
-				[Events, {}],
+				[
+					Semantics,
+					{
+						className: `select-none`,
+					},
+				],
 			]}
 		>
-			<Semantics className="">{children}</Semantics>
+			<SelfClosingComponentStack />
+			{children}
 		</ProviderStack>
 	);
 }
+
+const SelfClosingComponentStack = () => {
+	return (
+		<>
+			<CookieConsent />
+			<Scripts />
+			<ScrollToTop />
+		</>
+	);
+};
 
 type NoInfer<T> = [T][T extends any ? 0 : 1];
 

@@ -14,7 +14,7 @@ export const Semantics = ({
 			<main
 				className={cn(
 					`
-						w-full mx-auto prose prose-lg flex flex-col items-center justify-center overflow-x-hidden
+						w-full mx-auto flex flex-col items-center justify-center overflow-x-hidden h-fit
 				`,
 					className,
 				)}
@@ -29,4 +29,4 @@ export const Semantics = ({
 			/>
 		</>
 	);
-}
+};

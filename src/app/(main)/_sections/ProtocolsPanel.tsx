@@ -1,12 +1,23 @@
 "use client";
 
+import { Section } from "@/components";
 import Card from "@/components/custom/Card";
 import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
 
 export default function ProtocolsPanel() {
-	const [duration, setDuration] = useState(TIME.FAST_DURATION);
+	const images = [
+		"/assets/images/proto/1.png",
+		"/assets/images/proto/2.png",
+		"/assets/images/proto/3.png",
+		"/assets/images/proto/4.png",
+		"/assets/images/proto/5.png",
+		"/assets/images/proto/6.png",
+		"/assets/images/proto/7.png",
+	];
+
+	const [duration, setDuration] = useState<number>(25);
 	const [ref, { width }] = useMeasure();
 
 	const xTranslation = useMotionValue(0);
@@ -39,24 +50,24 @@ export default function ProtocolsPanel() {
 		return controls?.stop;
 	}, [rerender, xTranslation, duration, width]);
 	return (
-		<>
+		<Section>
 			<motion.div
 				className="absolute left-0 flex gap-4"
 				style={{ x: xTranslation }}
 				ref={ref}
 				onHoverStart={() => {
 					setMustFinish(true);
-					setDuration(TIME.SLOW_DURATION);
+					setDuration(75);
 				}}
 				onHoverEnd={() => {
 					setMustFinish(true);
-					setDuration(TIME.FAST_DURATION);
+					setDuration(25);
 				}}
 			>
-				{[1, 2, 3, 4, 5, 6, 7].map((item, idx) => (
-					<Card image={`/assets/images/proto/${item}.png`} key={idx} />
+				{[...images, ...images].map((item, idx) => (
+					<Card image={`${item}`} key={idx} />
 				))}
 			</motion.div>
-		</>
+		</Section>
 	);
 }

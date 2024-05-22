@@ -42,5 +42,5 @@
 		".next/types/**/*.ts",
 		"custom.d.ts"
 	],
-	"exclude": ["node_modules"],
+	"exclude": ["node_modules"]
 }

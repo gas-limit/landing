@@ -1,10 +1,10 @@
 "use client";
+import { CustomPicture } from "@/components";
 import { cn } from "@/lib/utils";
 import { TwDimensionConversion } from "@/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import type React from "react";
-import { CustomPicture } from "@/components";
 
 export const Logo: React.FC<{
 	size: Sizes;
