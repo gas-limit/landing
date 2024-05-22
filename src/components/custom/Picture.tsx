@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
 import * as React from "react";
@@ -6,29 +8,28 @@ type PictureProps = React.ComponentPropsWithoutRef<"picture"> & {
 	variant?: "primary" | "secondary";
 };
 
-const Picture = React.forwardRef<
-	HTMLElement,
-	React.HTMLAttributes<HTMLElement>
->(({ className, children, style, variant, ...props }: PictureProps, ref) => {
-	// const srcSet = getSrcFromChildImage(children);
-	return (
-		<picture
-			className={cn(PictureVariants({ variant }), className)}
-			ref={ref}
-			style={style}
-			{...props}
-		>
-			{children}
-			<source srcSet={""} type="image/webp" />
-		</picture>
-	);
-});
+const Picture = React.forwardRef<HTMLElement, PictureProps>(
+	({ className, children, style, variant, ...props }, ref) => {
+		const srcSet = getSrcFromChildImage(children);
+		return (
+			<picture
+				className={cn(PictureVariants({ variant }), className)}
+				ref={ref as React.LegacyRef<HTMLElement>}
+				style={style}
+				{...props}
+			>
+				{children}
+				<source srcSet={srcSet} type="image/webp" />
+			</picture>
+		);
+	},
+);
 
 const PictureVariants = cva("overflow-hidden", {
 	variants: {
 		variant: {
-			primary: "rounded-lg shadow-lg",
-			secondary: "rounded-md shadow-md",
+			primary: "rounded-lg overflow-hidden",
+			secondary: "rounded-md overflow-hidden",
 		},
 	},
 	defaultVariants: {

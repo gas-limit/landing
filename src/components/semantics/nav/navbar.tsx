@@ -29,8 +29,10 @@ export const Navbar = () => {
 	if (isLoaded && !isMobile) {
 		return (
 			<nav
-				className="navbar-glass sticky top-0 z-[99999]"
-				style={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+				className={`
+					px-10 sticky top-0 z-[99999]
+					mx-auto 
+				`}
 			>
 				<motion.div
 					transition={{ duration: 0.5, type: "tween", ease: "easeInOut" }}
@@ -43,10 +45,10 @@ export const Navbar = () => {
 				>
 					<span className="cursor-pointer" onClick={() => router.push("/")}>
 						<Image
-							src="/assets/svgs/logo.svg"
+							src="/assets/svgs/logo-text.svg"
 							alt="Logo"
-							width="60"
-							height="50"
+							width={130}
+							height={130}
 							priority
 						/>
 					</span>

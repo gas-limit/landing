@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import type { SemanticProps } from "@/types/frontend/semantic-props";
 import * as Motion from "../constants/Motion";

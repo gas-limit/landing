@@ -1,6 +1,8 @@
-export enum Time {
+enum TIME {
 	SHORT = 300,
 	MEDIUM = 500,
 	LONG = 1000,
 	EXTRA_LONG = 2000,
+	FAST_DURATION = 25,
+	SLOW_DURATION = 75,
 }

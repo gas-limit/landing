@@ -1,0 +1,86 @@
+@use 'sass:math';
+@import "./subtracts/_variables";
+@import "./subtracts/_mixins";
+
+@function particles($max, $spacing, $color-particle) {
+  $val: 0 0 $color-particle;
+
+  @for $i from 1 through $max {
+    $val: #{$val},
+      #{random(math.div($spacing, 1px)) * 1px} #{random(math.div($spacing, 1px)) * 1px} $color-particle;
+  }
+
+  @return $val;
+}
+
+.oval {
+  width: 80%;
+  height: 60%;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  max-width: 600px;
+  max-height: 400px;
+}
+
+.particle,
+.particle::after {
+  background: transparent;
+}
+
+.particle::after {
+  position: absolute;
+  content: "";
+  top: $spacing;
+}
+
+.particle-1 {
+  animation: animParticle $time-1 linear infinite;
+  background-position: particles(600, $spacing, $color-particle);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-1::after {
+  background-position: particles(600, $spacing, $color-particle);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-2 {
+  animation: animParticle $time-2 linear infinite;
+  background-position: particles(200, $spacing, $color-particle);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2::after {
+  background-position: particles(200, $spacing, $color-particle);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-3 {
+  animation: animParticle $time-3 linear infinite;
+  background-position: particles(100, $spacing, $color-particle);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-3::after {
+  background-position: particles(100, $spacing, $color-particle);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-4 {
+  animation: animParticle $time-4 linear infinite;
+  background-position: particles(400, $spacing, $color-particle);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-4::after {
+  background-position: particles(400, $spacing, $color-particle);
+  height: 1px;
+  width: 1px;
+}

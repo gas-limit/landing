@@ -1,3 +1,4 @@
+"use client";
 import { fadeInAnimationVariants } from "@/components/constants/Motion";
 import {
 	DropdownMenu,

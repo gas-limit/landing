@@ -1,3 +1,4 @@
+"use client"; // Just to keep it safe
 import { cubicBezier, motion } from "framer-motion";
 
 export const MotionArticle = motion.article;

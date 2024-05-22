@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 export function constructMetadata({
-	title = "Coven",
+	title = "Coven Finance",
 	description = "Coven Finance offers a unique platform for anyone to create, manage, and invest in index tokens composed of a diverse mix of ERC20 tokens, liquidity provider tokens, and lending tokens. Built on the fast and efficient Fantom network, Coven Finance allows seamless portfolio management with cutting-edge features.",
 	image = "/assets/images/og.png",
 	icons = "/assets/svgs/logo.svg",
@@ -67,8 +67,8 @@ export async function constructViewport(): Promise<Viewport> {
 		viewportFit: "cover",
 		interactiveWidget: "resizes-visual",
 		themeColor: [
-			{ media: "(prefers-color-scheme: light)", color: "cyan" },
-			{ media: "(prefers-color-scheme: dark)", color: "black" },
+			{ media: "(prefers-color-scheme: light)", color: "#409888" },
+			{ media: "(prefers-color-scheme: dark)", color: "#5E4978" },
 		],
 		colorScheme: "dark light",
 	};

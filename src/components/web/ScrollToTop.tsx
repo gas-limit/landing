@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export default function ScrollToTop() {
+export const ScrollToTop: React.FC = () => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	useEffect(() => {
@@ -36,4 +36,4 @@ export default function ScrollToTop() {
 			<ChevronUp />
 		</Button>
 	);
-}
+};

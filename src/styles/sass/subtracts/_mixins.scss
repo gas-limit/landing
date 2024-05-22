@@ -1,0 +1,3 @@
+@mixin particles($max) {
+  box-shadow: particles($max);
+}

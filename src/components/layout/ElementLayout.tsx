@@ -1,7 +1,9 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import type React from "react";
 
-export default function Layout({
+export default function ElementLayout({
 	Element,
 	children,
 	className,

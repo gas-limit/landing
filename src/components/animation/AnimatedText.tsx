@@ -1,6 +1,6 @@
 "use client";
 import { type Variant, motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 type AnimatedTextProps = {
 	text: string | string[];
@@ -14,28 +14,33 @@ type AnimatedTextProps = {
 	};
 };
 
-const defaultAnimations = {
-	hidden: {
-		opacity: 0,
-		y: 20,
-	},
-	visible: {
-		opacity: 1,
-		y: 0,
-		transition: {
-			duration: 0.1,
-		},
-	},
-};
-
 export const AnimatedText = ({
 	text,
 	el: Wrapper = "p",
 	className,
 	once,
 	repeatDelay,
-	animation = defaultAnimations,
+	animation,
 }: AnimatedTextProps) => {
+	const defaultAnimations = useMemo(
+		() => ({
+			hidden: {
+				opacity: 0,
+				y: 20,
+			},
+			visible: {
+				opacity: 1,
+				y: 0,
+				transition: {
+					duration: 0.1,
+				},
+			},
+		}),
+		[],
+	);
+
+	const animations = animation || defaultAnimations;
+
 	const controls = useAnimation();
 	const textArray = Array.isArray(text) ? text : [text];
 	const ref = useRef(null);
@@ -60,7 +65,7 @@ export const AnimatedText = ({
 		}
 
 		return () => clearTimeout(timeout);
-	}, [isInView]);
+	}, [isInView, controls, repeatDelay]);
 
 	return (
 		<Wrapper className={className}>
@@ -83,7 +88,7 @@ export const AnimatedText = ({
 									<motion.span
 										key={`${char}-${charIndex}`}
 										className="inline-block"
-										variants={animation}
+										variants={animations}
 									>
 										{char}
 									</motion.span>
