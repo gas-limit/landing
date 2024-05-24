@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib";
 import { type Variant, motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useMemo, useRef } from "react";
 
@@ -32,7 +33,7 @@ export const AnimatedText = ({
 				opacity: 1,
 				y: 0,
 				transition: {
-					duration: 0.1,
+					duration: 0.001,
 				},
 			},
 		}),
@@ -68,7 +69,7 @@ export const AnimatedText = ({
 	}, [isInView, controls, repeatDelay]);
 
 	return (
-		<Wrapper className={className}>
+		<Wrapper className={cn(``, className)}>
 			<span className="sr-only">{textArray.join(" ")}</span>
 			<motion.span
 				ref={ref}

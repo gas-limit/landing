@@ -44,7 +44,7 @@ export const CookieConsent = () => {
 			<Card
 				className={`
 						my-10 mx-auto max-w-max md:max-w-screen-sm
-						fixed bottom-0 left-0 right-0 text-white
+						fixed bottom-0 left-0 right-0
 						flex px-3 md:px-4 py-3 justify-between items-center flex-col sm:flex-row gap-4  
 						bg-gray-700 rounded-lg shadow ${cookieConsent ? "hidden" : "flex"}`}
 			>
@@ -54,7 +54,7 @@ export const CookieConsent = () => {
 					<div className="text-left">
 						<Link href="/legal/cookies">
 							<p>
-								This website uses{" "}
+								This website uses
 								<span className="font-bold text-sky-400">cookies</span> to offer
 								you a better browsing experience. Find out more on how we use
 								cookies.

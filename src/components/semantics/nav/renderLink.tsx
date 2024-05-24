@@ -1,15 +1,9 @@
 "use client";
-import { fadeInAnimationVariants } from "@/components/constants/Motion";
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { IconType } from "react-icons/lib";
-
+import { toast } from "sonner";
 interface LinkProps {
 	name: string;
 	href: string;
@@ -19,13 +13,16 @@ interface LinkProps {
 export const renderLink = (link: LinkProps, index: Index) => {
 	return (
 		<motion.span key={index}>
-			<Link
-				href={link.href}
-				target={link.name !== "Investors" ? "_self" : "_blank"}
-				className="mx-10 bg-accent text-zinc-900 hover:bg-gray-300 dark:hover:bg-zinc-900 dark:hover:text-[#fafafa] font-semibold transition-all px-3 py-2 rounded-lg duration-300"
+			<Button
+				onClick={() => toast("Coming soon!")}
+				className={`
+					mx-10 bg-white hover:bg-[#f5f5f5] text-black 
+					font-semibold transition-all px-6 py-2 rounded-lg duration-300 text-lg flex gap-2 items-center justify-center
+				`}
 			>
 				{link.name}
-			</Link>
+				<ArrowRight size={16} />
+			</Button>
 		</motion.span>
 	);
 };

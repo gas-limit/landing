@@ -20,11 +20,11 @@ const CustomArticle = React.forwardRef<
 	/>
 ));
 
-const ArticleVariants = cva("bg-foreground-800 text-foreground-800", {
+const ArticleVariants = cva("bg-foreground-800 text-white", {
 	variants: {
 		variant: {
-			primary: "bg-foreground-800 text-foreground-800",
-			secondary: "bg-foreground-800 text-foreground-800",
+			primary: "",
+			secondary: "",
 		},
 	},
 	defaultVariants: {

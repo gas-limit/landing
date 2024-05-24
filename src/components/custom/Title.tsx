@@ -17,9 +17,15 @@ export const Title: React.FC<Readonly<TitleProps>> = ({
 	subClassName,
 }) => {
 	return (
-		<Component className={cn("", className)}>
+		<Component
+			className={cn("", className)}
+			style={{
+				fontSize: `${"clamp(1.5rem, 5vw, 2.5rem)"}`,
+				lineHeight: "1.2",
+			}}
+		>
 			{title}
-			{subtitle && <span className={cn("", subClassName)}>{subtitle}</span>}
+			{subtitle && <span className={cn(``, subClassName)}>{subtitle}</span>}
 		</Component>
 	);
 };

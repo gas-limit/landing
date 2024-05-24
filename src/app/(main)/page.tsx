@@ -1,68 +1,72 @@
-"use client";
-
-import { Hero, Picture, Title } from "@/components";
-import { AnimatedText, Slide } from "@/components";
-import { Background } from "@/components/svgs/Background";
-import { Article, Section } from "@/components/templates";
-import { sections } from "@/constants";
-import { Slugify } from "@/utils";
-import Image from "next/image";
 import type React from "react";
-import ProtocolsPanel from "./_sections/ProtocolsPanel";
+import { Hero, Section, Card, Title } from "@/components";
+import { AboutPanel, SectionsPanel } from "./_sections/index";
 
-export default function HomePage() {
-	// await new Promise((resolve) => setTimeout(resolve, 2000)); <- only uncomment if you want a longer loading time
+export default async function HomePage() {
+	await new Promise((resolve) => setTimeout(resolve, 2000));
+	const images: {
+		source: string;
+		name: string;
+	}[] = [
+		{
+			source: "/assets/images/proto/1.png",
+			name: "Spookyswap"
+		},
+		{
+			source: "/assets/images/proto/2.png",
+			name: "WigoSwap"
+		},
+		{
+			source: "/assets/images/proto/3.png",
+			name: "Tarot"
+		},
+		{
+			source: "/assets/images/proto/4.png",
+			name: "Equalizer"
+		},
+		{
+			source: "/assets/images/proto/5.png",
+			name: "BeethovenX"
+		},
+		{
+			source: "/assets/images/proto/6.png",
+			name: "Fantom Moneymarkets"
+		},
+		{
+			source: "/assets/images/proto/7.png",
+			name: "Polter Finance"
+		},
+	];
 	return (
 		<>
 			<Hero
 				image={`/assets/images/landing/hero.png`}
 				title={`Coven Finance`}
-				paragraph={`
-						Yield optimized index tokens on Fantom
-					`}
+				subtitle={`Yield optimized index tokens on Fantom`}
 			/>
+			{/* <ProtocolsPanel /> */}
+			<AboutPanel />
+			<SectionsPanel />
 			<Section
 				className={`
-					flex flex-col justify-center items-center
-				 	prose-lg
-					border border-red-400
+					grid grid-cols-2 gap-4
+					md:grid-cols-3 lg:grid-cols-4
+					justify-center items-center
+					p-4 mb-32
 				`}
 			>
-				{sections.map((section, index) => {
-					const adjustedIndex = index + 1;
-					return (
-						<Section
-							key={Slugify(section.title!)}
-							className={` h-96 flex flex-col justify-center items-center`}
-						>
-							<Article
-								className={`
-							flex flex-col justify-start items-center
-							`}
-							>
-								<Title h={`h2`} title={section.title!} className={``} />
-								<AnimatedText text={section.description!} className={``} />
-							</Article>
-							<Slide delay={+adjustedIndex * 0.5}>
-								<Picture
-									className={`
-								
-								`}
-									children={
-										<Image
-											src={`/assets/images/landing/${adjustedIndex}.png`}
-											alt={``}
-											width={300}
-											height={300}
-										/>
-									}
-								/>
-							</Slide>
-						</Section>
-					);
-				})}
+				<Title 
+					h="h2"
+					title={`Integrated with`}
+					className={`
+						col-span-full text-center text-2xl
+						font-bold text-white
+					`}
+				/>
+				{[...images].map((item, idx: Index) => (
+					<Card image={`${item.source}`} name={item.name} key={idx} />
+				))}
 			</Section>
-			<ProtocolsPanel />
 		</>
 	);
 }

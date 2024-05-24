@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ChevronUp } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export const ScrollToTop: React.FC = () => {
@@ -27,13 +27,20 @@ export const ScrollToTop: React.FC = () => {
 	};
 
 	return (
-		<Button
-			className={`fixed bottom-4 right-4 rounded-full p-2 outline-none transition-opacity duration-200 ${
+		<picture
+			className={`fixed bottom-4 right-4 rounded-full p-2 outline-none transition-opacity duration-200 bg-transparent ${
 				isVisible ? "opacity-100" : "opacity-0"
 			}`}
+			role={`button`}
 			onClick={scrollToTop}
 		>
-			<ChevronUp />
-		</Button>
+			<Image
+				src={`/assets/svgs/web/scroll.svg`}
+				alt={`Scroll to top`}
+				width={40}
+				height={40}
+				className={`object-cover hover:scale-110 transition-transform duration-200`}
+			/>
+		</picture>
 	);
 };

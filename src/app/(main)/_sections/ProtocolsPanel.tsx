@@ -1,12 +1,11 @@
 "use client";
 
-import { Section } from "@/components";
-import Card from "@/components/custom/Card";
+import { Card, Section, Title } from "@/components";
 import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
 
-export default function ProtocolsPanel() {
+export const ProtocolsPanel = () => {
 	const images = [
 		"/assets/images/proto/1.png",
 		"/assets/images/proto/2.png",
@@ -50,24 +49,37 @@ export default function ProtocolsPanel() {
 		return controls?.stop;
 	}, [rerender, xTranslation, duration, width]);
 	return (
-		<Section>
-			<motion.div
-				className="absolute left-0 flex gap-4"
-				style={{ x: xTranslation }}
-				ref={ref}
-				onHoverStart={() => {
-					setMustFinish(true);
-					setDuration(75);
-				}}
-				onHoverEnd={() => {
-					setMustFinish(true);
-					setDuration(25);
-				}}
-			>
-				{[...images, ...images].map((item, idx) => (
-					<Card image={`${item}`} key={idx} />
-				))}
-			</motion.div>
+		<Section
+			className={`
+				flex flex-col justify-center items-center
+				w-screen h-fit
+				border border-red-400 mb-8 mt-20 max-w-screen-xl
+			`}
+		>
+			<>
+				<motion.div
+					className={`
+						left-0 flex gap-4 justify-center items-center
+						max-w-screen-xl w-full h-[300px]
+					`}
+					style={{
+						x: xTranslation,
+					}}
+					ref={ref}
+					onHoverStart={() => {
+						setMustFinish(true);
+						setDuration(75);
+					}}
+					onHoverEnd={() => {
+						setMustFinish(true);
+						setDuration(25);
+					}}
+				>
+					{[...images, ...images].map((item, idx: Index) => (
+						<Card image={`${item}`} key={idx} name={""} />
+					))}
+				</motion.div>
+			</>
 		</Section>
 	);
-}
+};

@@ -1,55 +1,61 @@
 "use client";
-import { CustomPicture as Picture } from "@/components";
-import { Text, Title } from "@/components/custom";
-import { Article, Header, Section } from "@/components/templates";
+import { Article, Header, CustomPicture as Picture, Text } from "@/components";
 import Image from "next/image";
-import Link from "next/link";
 import type React from "react";
 
 interface HeroProps extends Partial<Record<string, string | string[]>> {}
 
 export const Hero: React.FC<HeroProps> = ({ title, subtitle, paragraph }) => {
 	return (
-		<Header className="w-screen h-fit bg-center bg-cover border border-red-400">
-			<Section className="max-w-screen-xl px-4 py-32 mx-auto lg:flex lg:h-screen lg:items-center lg:justify-center">
-				<Picture
-					className={`z-[-1] w-full h-full lg:w-1/2 lg:h-full lg:order-2 lg:rounded-lg lg:overflow-hidden`}
+		<Header
+			className={`
+				max-w-screen-xl px-4 pt-16
+				pb-6 mx-auto sm:px-6 lg:px-8
+				lg:pt-24 top-0 max-h-[90vh]
+				overflow-hidden relative
+			`}
+		>
+			<Article
+				className={`
+						w-full mx-auto text-center  
+						lg:order-1 lg:rounded-lg 
+						lg:overflow-hidden
+					`}
+			>
+				<h1
+					className={`
+						text-4xl sm:text-6xl lg:text-7xl
+						font-extrabold
+					`}
 				>
-					<Image
-						src={`/assets/images/landing/hero.png`}
-						alt={`hero image`}
-						width={1920}
-						height={1080}
-					/>
-				</Picture>
-				<Article className="w-full h-full max-w-3xl mx-auto text-center fixed  border border-red-400">
-					<Title
-						h="h1"
-						className="text-3xl font-extrabold text-transparent bg-gradient-to-r from-[#328170] via-blue-500 to-[#4c246e] bg-clip-text sm:text-5xl"
-						title={title as string}
-						subtitle={(subtitle as string) ?? null}
-						subClassName="block mt-4 text-xl font-semibold text-gray-300 sm:text-2xl"
-					/>
-					<Text
-						className={`max-w-xl mx-auto mt-4 sm:text-xl/relaxed`}
-						text={paragraph}
-					/>
-					<div className="flex flex-wrap justify-center gap-4 mt-8">
-						<Link
-							className="block w-full px-12 py-3 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-							href="/"
-						>
-							Get Started
-						</Link>
-						<Link
-							className="block w-full px-12 py-3 text-sm font-medium text-white border border-blue-600 rounded hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
-							href="/"
-						>
-							Learn More
-						</Link>
-					</div>
-				</Article>
-			</Section>
+					{title}
+				</h1>
+				<Text
+					className={`
+    				block mt-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-5
+					`}
+					text={subtitle}
+				/>
+			</Article>
+			<Picture
+				className={`
+						rounded-full h-[50%] w-full p-2 
+						flex items-center
+						justify-center object-contain object-center
+					`}
+			>
+				<Particles />
+				<Image
+					className={`
+						rounded-full h-[50%] w-full
+						object-contain object-center
+					`}
+					src={`/assets/images/landing/hero.png`}
+					alt={`hero image`}
+					width={1000}
+					height={1080}
+				/>
+			</Picture>
 		</Header>
 	);
 };
@@ -58,10 +64,24 @@ export default Hero;
 
 const Particles = () => {
 	return (
-		<div className={`oval`}>
-			<div className="particle-1"></div>
-			<div className="particle-2"></div>
-			<div className="particle-3"></div>
+		<div
+			// move to center
+			className={`
+				absolute top-0 left-0 
+				right-0 bottom-0 mb-8
+			`}
+		>
+			{Array.from({ length: 100 }).map((_, index) => (
+				<div
+					key={index}
+					className={`
+						circle-container mb-8 absolute
+						top-0 left-0 right-0 bottom-0
+					`}
+				>
+					<div className="circle"></div>
+				</div>
+			))}
 		</div>
 	);
 };

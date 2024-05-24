@@ -1,6 +1,6 @@
 "use client";
 
-export default function Candle() {
+export const Candle = () => {
 	return (
 		<div className="candle">
 			<div className="flame">
@@ -13,4 +13,4 @@ export default function Candle() {
 			<div className="wax"></div>
 		</div>
 	);
-}
+};

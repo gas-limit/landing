@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import type React from "react";
 
-export default function ElementLayout({
+export const ElementLayout = ({
 	Element,
 	children,
 	className,
@@ -11,6 +11,6 @@ export default function ElementLayout({
 	children: React.ReactNode;
 	Element: React.ElementType;
 	className?: string;
-}>) {
+}>) => {
 	return <Element className={cn("", className)}>{children}</Element>;
-}
+};

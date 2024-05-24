@@ -53,8 +53,10 @@
   }
 
   @layer base {
-    * {
-      @apply border-border;
+    *,
+    *::before,
+    *::after {
+      @apply cursor-default;  
     }
 
     body {
