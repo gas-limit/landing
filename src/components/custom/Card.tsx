@@ -12,7 +12,7 @@ export const Card: React.FC<{
 		<Article
 			className={`
 				flex flex-col justify-center items-center
-				rounded-lg shadow-lg p-2
+				rounded-lg shadow-lg p-2  bg-gradient-to-b from-[#3A1E3B]/10 to-[#3A1E3B]/50
 			`}
 		>
 			<Picture

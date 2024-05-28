@@ -25,14 +25,14 @@ export const Hero: React.FC<HeroProps> = ({ title, subtitle, paragraph }) => {
 				<h1
 					className={`
 						text-4xl sm:text-6xl lg:text-7xl
-						font-extrabold
+						font-extrabold text-white
 					`}
 				>
 					{title}
 				</h1>
 				<Text
 					className={`
-    				block mt-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-5
+    				block mt-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-5 text-white
 					`}
 					text={subtitle}
 				/>

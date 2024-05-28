@@ -38,11 +38,11 @@ export const Navbar = () => {
 					`}
 				>
 					<Logo size={`40`} className={`select-none`} />
-					<div className="flex items-center justify-between grow">
+					<div id={`test`} className="flex items-center justify-between grow">
 						<motion.button
 							className={`
 								flex items-center justify-end 
-								px-10 ml-auto
+								ml-auto
 							`}
 							initial="initial"
 							animate="animate"

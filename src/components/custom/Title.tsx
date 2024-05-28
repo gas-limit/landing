@@ -22,6 +22,7 @@ export const Title: React.FC<Readonly<TitleProps>> = ({
 			style={{
 				fontSize: `${"clamp(1.5rem, 5vw, 2.5rem)"}`,
 				lineHeight: "1.2",
+				color: "#fff",
 			}}
 		>
 			{title}

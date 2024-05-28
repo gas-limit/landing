@@ -25,9 +25,11 @@ export const SectionsPanel = () => {
 			{sections.map((section, index) => {
 				const adjustedIndex = index + 1;
 				return (
-					<Slide delay={+adjustedIndex * 0.5}>
+					<Slide 
+						key={Slugify(section.title!)}
+						delay={+adjustedIndex * 0.25}
+					>
 						<Section
-							key={Slugify(section.title!)}
 							className={`
 								flex flex-col-reverse sm:flex-row
 								justify-center items-center h-full

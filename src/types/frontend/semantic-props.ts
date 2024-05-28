@@ -20,7 +20,6 @@ export interface SemanticProps<T extends Semantics>
 	element?: T;
 	framerProps?: HTMLMotionProps<T>;
 	attributes?: JSX.IntrinsicElements[T];
-	key?: string | number;
 	style?: React.CSSProperties;
 	className?: string;
 }
