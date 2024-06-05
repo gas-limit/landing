@@ -19,8 +19,11 @@ export const FooterBar = ({
 			<Footer
 				className={`
 					bg-gradient-to-b from-[#3A1E3B]/10 
-					to-[#3A1E3B]/90 w-[100dvw] bottom-0
+					to-[#3A1E3B]/90 w-[100dvw] bottom-0 text-white
 				`}
+				style={{
+					color: "white",
+				}}
 			>
 				<div className="px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24 max-w-screen-xl">
 					<div

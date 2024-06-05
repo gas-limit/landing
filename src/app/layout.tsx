@@ -35,7 +35,7 @@ export default function RootLayout({
 		<html
 			lang="en"
 			suppressHydrationWarning
-			className="bg-gradient-to-b from-[#328170] to-[#4C246E]"
+			className="bg-gradient-to-b from-[#7341aa] to-[#4C246E]"
 		>
 			<body
 				className={`

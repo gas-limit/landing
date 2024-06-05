@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib";
 import type React from "react";
-import { FooterBar, Navbar } from ".";
+import { FloatingNav, FooterBar, Navbar } from ".";
 
 export const Semantics = ({
 	children,

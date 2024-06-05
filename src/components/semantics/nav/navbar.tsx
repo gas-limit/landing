@@ -8,7 +8,8 @@ import { useEffect, useState } from "react";
 
 import { Logo } from "../Logo";
 import { renderLink } from "./renderLink";
-
+import Image from "next/image";
+import Link from "next/link";
 let isError = false;
 if (typeof window === "undefined") isError = true;
 
@@ -24,35 +25,20 @@ export const Navbar = () => {
 			<Nav
 				className={`
 					px-10 sticky top-0 z-50
-					bg-gradient-to-b from-[#235B4E]/90
-					to-[#235B4E]/10 backdrop-blur-lg flex flex-row items-center justify-center
+					flex items-center justify-center
+					w-full h-[6rem]
 				`}
 			>
-				<motion.div
-					transition={{ duration: 0.5, type: "tween", ease: "easeInOut" }}
-					initial={{ y: "-100%" }}
-					animate={{ y: "0%" }}
+				<Link
+					href="/"
 					className={`
 						flex items-center justify-between 
-						p-5 w-full max-w-screen-xl
+						p-5 w-full max-w-screen-xl absolute z-10
 					`}
 				>
-					<Logo size={`40`} className={`select-none`} />
-					<div id={`test`} className="flex items-center justify-between grow">
-						<motion.button
-							className={`
-								flex items-center justify-end 
-								ml-auto
-							`}
-							initial="initial"
-							animate="animate"
-							exit="end"
-							variants={fadeInAnimationVariants}
-						>
-							{Links.map(renderLink)}
-						</motion.button>
-					</div>
-				</motion.div>
+					<Logo size={`40`} />
+				</Link>
+				<div className="backdrop"></div>
 			</Nav>
 		);
 	}

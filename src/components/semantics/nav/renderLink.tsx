@@ -20,7 +20,9 @@ export const renderLink = (link: LinkProps, index: Index) => {
 					font-semibold transition-all px-6 py-2 rounded-lg duration-300 text-lg flex gap-2 items-center justify-center
 				`}
 			>
-				{link.name}
+				<motion.span>
+					{link.name}
+				</motion.span>
 				<ArrowRight size={16} />
 			</Button>
 		</motion.span>

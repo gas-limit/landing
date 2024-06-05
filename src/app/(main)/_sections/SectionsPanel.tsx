@@ -77,7 +77,7 @@ export const SectionsPanel = () => {
 										`}
 								/>
 							</Article>
-							<Slide delay={+adjustedIndex * 0.5}>
+							<Slide delay={+adjustedIndex * 0.4}>
 								<Picture className={`overflow-auto`}>
 									{!isLargeScreen && (
 										<Image

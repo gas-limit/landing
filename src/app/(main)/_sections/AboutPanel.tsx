@@ -19,9 +19,15 @@ export const AboutPanel: React.FC = () => {
 				/>
 				<Text 
 					className={`
-						flex text-4xl leading-none
+						flex leading-none
 						p-10 max-w-screen-xl text-white
-						flex-wrap text-center
+						flex-wrap text-center 
+						text-xl font-light
+						md:text-4xl
+						md:leading-none
+						md:p-12
+						md:font-normal
+						md:tracking-wide
 					`} 
 					text={value}
 				/>
