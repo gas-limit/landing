@@ -24,7 +24,8 @@ export const Card: React.FC<{
 					alt={``}
 					fill
 					sizes={`(min-width: 640px) 640px, 100vw`}
-					priority
+					loading={`lazy`}
+					fetchPriority={`low`}
 					quality={100}
 					style={{ objectFit: "contain", padding: "10px" }}
 				/>

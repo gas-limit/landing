@@ -1,12 +1,5 @@
 "use client";
 
-import {
-	NavigationMenu,
-	NavigationMenuItem,
-	NavigationMenuLink,
-	NavigationMenuList,
-	navigationMenuTriggerStyle
-} from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -40,22 +33,6 @@ export const Navbar = React.memo(() => {
 		setIsLoaded(true);
 	}, []);
 
-	const ScrollIntoCenterView = (href: string) => {
-		const element = document.getElementById(href)! as HTMLElement;
-		if (element) {
-			const elementRect = element.getBoundingClientRect();
-			const absoluteElementTop = elementRect.top + window.scrollY;
-			const middle =
-				absoluteElementTop +
-				Math.floor(elementRect.height / 2) -
-				Math.floor(window.innerHeight / 2);
-			window.scrollTo({
-				top: middle,
-				behavior: "smooth",
-			});
-		}
-	};
-
 	if (isLoaded && !isError) {
 		return (
 			<>
@@ -75,28 +52,6 @@ export const Navbar = React.memo(() => {
 						>
 							<Logo size={`40`} />
 						</Link>
-
-						{/* <NavigationMenu>
-							<NavigationMenuList>
-								{Links.map((link) => (
-									<NavigationMenuItem key={link.name}>
-										<Link
-											href={link.href}
-											onClick={(e) => {
-												e.preventDefault();
-												ScrollIntoCenterView(link.href)
-											}}
-										>
-											<NavigationMenuLink 
-												className={navigationMenuTriggerStyle()}
-											>
-												{link.name}
-											</NavigationMenuLink>
-										</Link>
-									</NavigationMenuItem>
-								))}
-							</NavigationMenuList>
-						</NavigationMenu> */}
 					</motion.div>
 					<div className="backdrop"></div>
 				</nav>

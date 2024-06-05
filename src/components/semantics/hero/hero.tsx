@@ -56,7 +56,7 @@ export const Hero: React.FC<HeroProps> = React.memo(
 						width={1000}
 						height={1080}
 						fetchPriority={`low`}
-						loading={`lazy`}
+						loading={`eager`}
 					/>
 				</Picture>
 			</Header>
