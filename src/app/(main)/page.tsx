@@ -1,5 +1,5 @@
+import { Card, Hero, Section, Title, EnterAnimation } from "@/components";
 import type React from "react";
-import { Hero, Section, Card, Title } from "@/components";
 import { AboutPanel, SectionsPanel } from "./_sections/index";
 
 export default async function HomePage() {
@@ -10,37 +10,36 @@ export default async function HomePage() {
 	}[] = [
 		{
 			source: "/assets/images/proto/1.png",
-			name: "Spookyswap"
+			name: "Spookyswap",
 		},
 		{
 			source: "/assets/images/proto/2.png",
-			name: "WigoSwap"
+			name: "WigoSwap",
 		},
 		{
 			source: "/assets/images/proto/3.png",
-			name: "Tarot"
+			name: "Tarot",
 		},
 		{
 			source: "/assets/images/proto/4.png",
-			name: "Equalizer"
+			name: "Equalizer",
 		},
 		{
 			source: "/assets/images/proto/5.png",
-			name: "BeethovenX"
+			name: "BeethovenX",
 		},
 		{
 			source: "/assets/images/proto/6.png",
-			name: "Fantom Moneymarkets"
+			name: "Fantom Moneymarkets",
 		},
 		{
 			source: "/assets/images/proto/7.png",
-			name: "Polter Finance"
+			name: "Polter Finance",
 		},
 	];
 	return (
 		<>
 			<Hero
-				image={`/assets/images/landing/hero.png`}
 				title={`Coven Finance`}
 				subtitle={`Yield optimized index tokens on Fantom`}
 			/>
@@ -54,8 +53,9 @@ export default async function HomePage() {
 					justify-center items-center
 					p-4 mb-32
 				`}
+				id={`protocols`}
 			>
-				<Title 
+				<Title
 					h="h2"
 					title={`Integrated with`}
 					className={`
@@ -64,7 +64,14 @@ export default async function HomePage() {
 					`}
 				/>
 				{[...images].map((item, idx: Index) => (
-					<Card image={`${item.source}`} name={item.name} key={idx} />
+					<EnterAnimation
+						key={idx} 
+					>
+						<Card 
+							image={`${item.source}`} 
+							name={item.name} 
+						/>
+					</EnterAnimation>
 				))}
 			</Section>
 		</>

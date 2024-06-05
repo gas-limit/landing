@@ -3,8 +3,8 @@
 import { Card, Section, Title } from "@/components";
 import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
-import useMeasure from "react-use-measure";
 import React from "react";
+import useMeasure from "react-use-measure";
 
 export const ProtocolsPanel = () => {
 	const images = [

@@ -11,10 +11,18 @@ import {
 import { sections } from "@/constants";
 import { Slugify } from "@/utils";
 import Image from "next/image";
-import { useMediaQuery } from "usehooks-ts";
 import React from "react";
+import { useMediaQuery } from "usehooks-ts";
 export const SectionsPanel = React.memo(() => {
 	const isLargeScreen = useMediaQuery("(min-width: 1600px)");
+	const Sections = [
+		"create-your-index",
+		"manage-with-ease",
+		"earn-more",
+		"flexible-investments",
+		"automate-your-strategy",
+		"maximize-returns"		
+	];
 	return (
 		<Section
 			className={`
@@ -22,14 +30,12 @@ export const SectionsPanel = React.memo(() => {
 					prose-lg gap-5 m-auto mb-6 mt-8
 					px-[1.25rem]
 				`}
+				id={`services`}
 		>
 			{sections.map((section, index) => {
 				const adjustedIndex = index + 1;
 				return (
-					<Slide 
-						key={Slugify(section.title!)}
-						delay={+adjustedIndex * 0.25}
-					>
+					<Slide key={Slugify(section.title!)} delay={+adjustedIndex * 0.25}>
 						<Section
 							className={`
 								flex flex-col-reverse sm:flex-row
@@ -37,6 +43,7 @@ export const SectionsPanel = React.memo(() => {
 								${glass} border-zinc-300/35
 								overflow-auto ${isLargeScreen ? `p-0 rounded-2xl` : ``}
 								`}
+							id={Sections[adjustedIndex]}
 							style={{
 								backgroundImage: `${
 									isLargeScreen
@@ -50,33 +57,34 @@ export const SectionsPanel = React.memo(() => {
 						>
 							<Article
 								className={`
-										flex flex-col justify-start items-center mr-4 ml-4 overflow-auto 
+										flex flex-col justify-start 
+										items-center mr-4 ml-4 overflow-auto 
 										${
 											isLargeScreen
-												? `w-full h-full m-0 backdrop-filter backdrop-blur-md bg-black/10`
-												: ``
+											? `w-full h-full m-0 backdrop-filter backdrop-blur-md bg-black/10`
+											: ``
 										}
-								`}
-								style={{
-									borderRadius: "1rem",
-								}}
-							>
+										`}
+										style={{
+											borderRadius: "1rem",
+										}}
+										>
 								<Title
 									h="h2"
 									title={section.title!}
 									className={`
-											w-full overflow-auto font-bold
-											text-2xl sm:text-3xl lg:text-4xl
+									w-full overflow-auto font-bold
+									text-2xl sm:text-3xl lg:text-4xl
 											${isLargeScreen ? `px-4` : ``}
-										`}
-								/>
+											`}
+											/>
 								<Text
 									text={section.description!}
 									className={`
-											max-w-xl mx-auto sm:text-xl/relaxed
-											overflow-auto ${isLargeScreen ? `px-4` : ``}
-										`}
-								/>
+									max-w-xl mx-auto sm:text-xl/relaxed
+									overflow-auto ${isLargeScreen ? `px-4` : ``}
+									`}
+									/>
 							</Article>
 							<Slide delay={+adjustedIndex * 0.4}>
 								<Picture className={`overflow-auto`}>

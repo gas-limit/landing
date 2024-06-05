@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
 import { Article, Picture, Text } from "@/components";
+import Image from "next/image";
+import React from "react";
 
 export const Card: React.FC<{
 	image: string;
@@ -18,7 +18,7 @@ export const Card: React.FC<{
 			<Picture
 				className={`relative overflow-hidden h-[100px] min-w-[100px]  flex justify-center items-center `}
 				key={image}
-				>
+			>
 				<Image
 					src={image}
 					alt={``}
@@ -27,15 +27,15 @@ export const Card: React.FC<{
 					priority
 					quality={100}
 					style={{ objectFit: "contain", padding: "10px" }}
-					/>
+				/>
 				<source srcSet={image} type={`image/webp`} />
 			</Picture>
-				<Text
-					className={`
+			<Text
+				className={`
 						p-2 text-center text-white
 						font-semibold text-lg
 					`}
-					text={name}
+				text={name}
 			/>
 		</Article>
 	);

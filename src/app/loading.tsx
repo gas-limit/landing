@@ -33,6 +33,6 @@ const Loading = React.memo(() => {
 			</ElementLayout>
 		</>
 	);
-})
+});
 
 export default Loading;

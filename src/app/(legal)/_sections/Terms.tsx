@@ -3,7 +3,7 @@ import { app } from "@/constants";
 import Link from "next/link";
 import type React from "react";
 
-export  const Terms = async () => {
+export const Terms = async () => {
 	return (
 		<>
 			<h1>Terms of Service</h1>

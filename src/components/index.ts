@@ -6,3 +6,4 @@ export * from "./provider";
 export * from "./semantics";
 export * from "./web";
 export * from "./templates";
+export * from "./svgs";

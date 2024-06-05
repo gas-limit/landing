@@ -1,10 +1,9 @@
 "use client";
 
-import { Semantics } from "@/components";
-import { CookieConsent, ScrollToTop } from "@/components";
+import { CookieConsent, ScrollToTop, Semantics } from "@/components";
 import { Events, ThemeProvider } from "@/components/provider";
 import { Scripts } from "@/scripts";
-import React from "react";
+import type React from "react";
 
 export default function Providers({
 	children,

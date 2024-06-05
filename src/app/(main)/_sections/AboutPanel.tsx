@@ -7,7 +7,10 @@ export const AboutPanel: React.FC = React.memo(() => {
 		"Coven Finance offers a unique platform for anyone to create, manage, and invest in index tokens composed of a diverse mix of ERC20 tokens, liquidity provider tokens, and lending tokens. Built on the fast and efficient Fantom network, Coven Finance allows seamless portfolio management with cutting-edge features.";
 	return (
 		<>
-			<Article className="flex flex-col justify-center items-center p-4">
+			<Article
+				className="flex flex-col justify-center items-center p-4"
+				id={`about`}
+			>
 				<Title
 					h={`h2`}
 					text="Your Gateway to Decentralized Index Funds on Fantom"
@@ -17,7 +20,7 @@ export const AboutPanel: React.FC = React.memo(() => {
             mb-4
           `}
 				/>
-				<Text 
+				<Text
 					className={`
 						flex leading-none
 						p-10 max-w-screen-xl text-white
@@ -28,7 +31,7 @@ export const AboutPanel: React.FC = React.memo(() => {
 						md:p-12
 						md:font-normal
 						md:tracking-wide
-					`} 
+					`}
 					text={value}
 				/>
 			</Article>

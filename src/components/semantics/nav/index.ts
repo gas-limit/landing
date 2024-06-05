@@ -1,2 +1,2 @@
 export * from "./navbar";
-export * from './FloatingNav'
+export * from "./FloatingNav";

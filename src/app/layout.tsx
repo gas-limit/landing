@@ -39,14 +39,9 @@ export default function RootLayout({
 		>
 			<body
 				className={`
-					flex flex-col min-h-screen
+		
 					overflow-x-hidden
 				`}
-				style={{
-					backgroundSize: "cover",
-					backgroundPosition: "center",
-					backgroundRepeat: "no-repeat",
-				}}
 			>
 				<Providers>{children}</Providers>
 			</body>
