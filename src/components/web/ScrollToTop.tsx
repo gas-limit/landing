@@ -2,9 +2,9 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export const ScrollToTop: React.FC = () => {
+export const ScrollToTop: React.FC = React.memo(() => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	useEffect(() => {
@@ -43,4 +43,4 @@ export const ScrollToTop: React.FC = () => {
 			/>
 		</picture>
 	);
-};
+});

@@ -1,19 +1,16 @@
 "use client";
 
 import { Nav } from "@/components";
-import { fadeInAnimationVariants } from "@/components/constants/Motion";
-import { Links } from "@/constants/links";
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import { Logo } from "../Logo";
-import { renderLink } from "./renderLink";
-import Image from "next/image";
 import Link from "next/link";
-let isError = false;
+import React from "react";
+
+let isError: boolean = false;
 if (typeof window === "undefined") isError = true;
 
-export const Navbar = () => {
+export const Navbar = React.memo(() => {
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {
@@ -42,4 +39,4 @@ export const Navbar = () => {
 			</Nav>
 		);
 	}
-};
+});

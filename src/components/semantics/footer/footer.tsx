@@ -4,7 +4,8 @@ import { Footer } from "@/components/templates";
 import React from "react";
 import { FooterCopyright, FooterSection, SocialLinks } from ".";
 import { Logo } from "../Logo";
-export const FooterBar = ({
+
+export const FooterBar = React.memo(({
 	name,
 	description,
 }: Readonly<{
@@ -72,7 +73,7 @@ export const FooterBar = ({
 			</Footer>
 		);
 	}
-};
+});
 
 const Description = ({ description }: Readonly<{ description?: string }>) => {
 	return (

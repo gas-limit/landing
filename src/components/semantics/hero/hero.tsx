@@ -1,11 +1,11 @@
 "use client";
 import { Article, Header, CustomPicture as Picture, Text } from "@/components";
 import Image from "next/image";
-import type React from "react";
+import React from "react";
 
 interface HeroProps extends Partial<Record<string, string | string[]>> {}
 
-export const Hero: React.FC<HeroProps> = ({ title, subtitle, paragraph }) => {
+export const Hero: React.FC<HeroProps> = React.memo(({ title, subtitle, paragraph }) => {
 	return (
 		<Header
 			className={`
@@ -58,7 +58,7 @@ export const Hero: React.FC<HeroProps> = ({ title, subtitle, paragraph }) => {
 			</Picture>
 		</Header>
 	);
-};
+});
 
 export default Hero;
 

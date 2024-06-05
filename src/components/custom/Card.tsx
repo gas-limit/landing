@@ -1,13 +1,13 @@
 "use client";
 
-import type React from "react";
+import React from "react";
 import Image from "next/image";
 import { Article, Picture, Text } from "@/components";
 
 export const Card: React.FC<{
 	image: string;
 	name: string;
-}> = ({ image, name }) => {
+}> = React.memo(({ image, name }) => {
 	return (
 		<Article
 			className={`
@@ -39,4 +39,4 @@ export const Card: React.FC<{
 			/>
 		</Article>
 	);
-};
+});

@@ -12,7 +12,8 @@ import { sections } from "@/constants";
 import { Slugify } from "@/utils";
 import Image from "next/image";
 import { useMediaQuery } from "usehooks-ts";
-export const SectionsPanel = () => {
+import React from "react";
+export const SectionsPanel = React.memo(() => {
 	const isLargeScreen = useMediaQuery("(min-width: 1600px)");
 	return (
 		<Section
@@ -96,4 +97,4 @@ export const SectionsPanel = () => {
 			})}
 		</Section>
 	);
-};
+});

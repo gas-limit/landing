@@ -4,7 +4,7 @@ import { Semantics } from "@/components";
 import { CookieConsent, ScrollToTop } from "@/components";
 import { Events, ThemeProvider } from "@/components/provider";
 import { Scripts } from "@/scripts";
-import type React from "react";
+import React from "react";
 
 export default function Providers({
 	children,

@@ -1,8 +1,8 @@
 "use client";
 import { CustomArticle as Article, Character, Text, Title } from "@/components";
-import type React from "react";
+import React from "react";
 
-export const AboutPanel: React.FC = () => {
+export const AboutPanel: React.FC = React.memo(() => {
 	const value =
 		"Coven Finance offers a unique platform for anyone to create, manage, and invest in index tokens composed of a diverse mix of ERC20 tokens, liquidity provider tokens, and lending tokens. Built on the fast and efficient Fantom network, Coven Finance allows seamless portfolio management with cutting-edge features.";
 	return (
@@ -34,4 +34,4 @@ export const AboutPanel: React.FC = () => {
 			</Article>
 		</>
 	);
-};
+});

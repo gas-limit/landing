@@ -4,12 +4,12 @@ import { cn } from "@/lib/utils";
 import { TwDimensionConversion } from "@/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import type React from "react";
+import React from "react";
 
 export const Logo: React.FC<{
 	size: Sizes;
 	className?: string;
-}> = ({ size, className }) => {
+}> = React.memo(({ size, className }) => {
 	const router = useRouter();
 	return (
 		<CustomPicture
@@ -27,4 +27,4 @@ export const Logo: React.FC<{
 			/>
 		</CustomPicture>
 	);
-};
+});

@@ -64,7 +64,7 @@ export default function Error({
 									text-sm font-medium bg-red-600 border border-red-600 rounded hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto
 								`}
 								variant={`outline`}
-								onClick={() => window.location.reload()}
+								onClick={() => reset()}
 							>
 								Try again
 							</Button>

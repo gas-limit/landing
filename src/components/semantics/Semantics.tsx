@@ -1,10 +1,10 @@
 "use client";
 
 import { cn } from "@/lib";
-import type React from "react";
+import React from "react";
 import { FloatingNav, FooterBar, Navbar } from ".";
 
-export const Semantics = ({
+export const Semantics = React.memo(({
 	children,
 	className,
 }: Readonly<{ children?: React.ReactNode; className: string }>) => {
@@ -29,4 +29,4 @@ export const Semantics = ({
 			/>
 		</>
 	);
-};
+});

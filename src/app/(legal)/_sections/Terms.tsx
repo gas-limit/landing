@@ -4,7 +4,6 @@ import Link from "next/link";
 import type React from "react";
 
 export  const Terms = async () => {
-	await new Promise((resolve) => setTimeout(resolve, 2000));
 	return (
 		<>
 			<h1>Terms of Service</h1>

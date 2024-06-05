@@ -1,8 +1,9 @@
 "use client";
 import { ElementLayout, CustomPicture as Picture } from "@/components";
 import Image from "next/image";
+import React from "react";
 
-export default function Loading() {
+const Loading = React.memo(() => {
 	return (
 		<>
 			<ElementLayout
@@ -32,4 +33,6 @@ export default function Loading() {
 			</ElementLayout>
 		</>
 	);
-}
+})
+
+export default Loading;

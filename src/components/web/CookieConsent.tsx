@@ -4,10 +4,10 @@ import { Article as Card } from "@/components/templates";
 import { Button } from "@/components/ui/button";
 import { useCookieConsentStore } from "@/core/store";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
 
-export const CookieConsent = () => {
+export const CookieConsent = React.memo(() => {
 	const { cookieConsent, setCookieConsent, setIsLoaded, isLoaded } =
 		useCookieConsentStore();
 	const [localStorageConsent, setLocalStorageConsent] = useLocalStorage(
@@ -78,4 +78,4 @@ export const CookieConsent = () => {
 			</Card>
 		</>
 	);
-};
+});
