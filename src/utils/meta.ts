@@ -54,7 +54,6 @@ export async function constructViewport(): Promise<Viewport> {
 		initialScale: 1,
 		minimumScale: 1,
 		maximumScale: 1,
-		userScalable: false,
 		viewportFit: "cover",
 		interactiveWidget: "resizes-visual",
 		themeColor: [
