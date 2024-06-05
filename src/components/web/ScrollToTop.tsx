@@ -28,10 +28,9 @@ export const ScrollToTop: React.FC = React.memo(() => {
 
 	return (
 		<picture
-			className={`fixed bottom-4 right-4 rounded-full p-2 outline-none transition-opacity duration-200 bg-transparent ${
+			className={`fixed bottom-4 right-4 rounded-full p-2 outline-none transition-opacity duration-200 bg-transparent hover:cursor-pointer ${
 				isVisible ? "opacity-100" : "opacity-0"
 			}`}
-			role={`button`}
 			onClick={scrollToTop}
 		>
 			<Image
