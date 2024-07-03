@@ -53,7 +53,8 @@ export async function constructViewport(): Promise<Viewport> {
 		height: "device-height",
 		initialScale: 1,
 		minimumScale: 1,
-		maximumScale: 1,
+		maximumScale: 5,
+		userScalable: true,
 		viewportFit: "cover",
 		interactiveWidget: "resizes-visual",
 		themeColor: [

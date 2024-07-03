@@ -1,9 +1,8 @@
-import { Card, Hero, Section, Title, EnterAnimation } from "@/components";
+import { Card, EnterAnimation, Hero, Section, Title } from "@/components";
 import type React from "react";
 import { AboutPanel, SectionsPanel } from "./_sections/index";
 
-export default async function HomePage() {
-	await new Promise((resolve) => setTimeout(resolve, 2000));
+export default function HomePage() {
 	const images: {
 		source: string;
 		name: string;
@@ -64,13 +63,8 @@ export default async function HomePage() {
 					`}
 				/>
 				{[...images].map((item, idx: Index) => (
-					<EnterAnimation
-						key={idx} 
-					>
-						<Card 
-							image={`${item.source}`} 
-							name={item.name} 
-						/>
+					<EnterAnimation key={idx}>
+						<Card image={`${item.source}`} name={item.name} />
 					</EnterAnimation>
 				))}
 			</Section>

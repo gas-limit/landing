@@ -21,7 +21,7 @@ export const SectionsPanel = React.memo(() => {
 		"earn-more",
 		"flexible-investments",
 		"automate-your-strategy",
-		"maximize-returns"		
+		"maximize-returns",
 	];
 	return (
 		<Section
@@ -30,7 +30,7 @@ export const SectionsPanel = React.memo(() => {
 					prose-lg gap-5 m-auto mb-6 mt-8
 					px-[1.25rem]
 				`}
-				id={`services`}
+			id={`services`}
 		>
 			{sections.map((section, index) => {
 				const adjustedIndex = index + 1;
@@ -61,14 +61,14 @@ export const SectionsPanel = React.memo(() => {
 										items-center mr-4 ml-4 overflow-auto 
 										${
 											isLargeScreen
-											? `w-full h-full m-0 backdrop-filter backdrop-blur-md bg-black/10`
-											: ``
+												? `w-full h-full m-0 backdrop-filter backdrop-blur-md bg-black/10`
+												: ``
 										}
 										`}
-										style={{
-											borderRadius: "1rem",
-										}}
-										>
+								style={{
+									borderRadius: "1rem",
+								}}
+							>
 								<Title
 									h="h2"
 									title={section.title!}
@@ -77,14 +77,14 @@ export const SectionsPanel = React.memo(() => {
 									text-2xl sm:text-3xl lg:text-4xl
 											${isLargeScreen ? `px-4` : ``}
 											`}
-											/>
+								/>
 								<Text
 									text={section.description!}
 									className={`
 									max-w-xl mx-auto sm:text-xl/relaxed
 									overflow-auto ${isLargeScreen ? `px-4` : ``}
 									`}
-									/>
+								/>
 							</Article>
 							<Slide delay={+adjustedIndex * 0.4}>
 								<Picture className={`overflow-auto`}>

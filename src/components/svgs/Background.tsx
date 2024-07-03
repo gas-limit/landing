@@ -25,7 +25,7 @@ export const Background = React.memo(
 					viewBox="0 0 5340 6360"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
-					style={{ maxWidth: '100%', height: 'auto' }}
+					style={{ maxWidth: "100%", height: "auto" }}
 				>
 					<g filter="url(#filter0_df_234_9)">
 						<path

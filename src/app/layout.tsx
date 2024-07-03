@@ -4,6 +4,7 @@ import type { NextWebVitalsMetric } from "next/app";
 import type React from "react";
 import "@/styles/css/globals.css";
 import "@/styles/sass/globals.scss";
+import Head from "next/head";
 export const metadata = constructMetadata();
 export const viewport = constructViewport();
 
@@ -37,6 +38,25 @@ export default function RootLayout({
 			suppressHydrationWarning
 			className="bg-gradient-to-b from-[#7341aa] to-[#4C246E]"
 		>
+			<Head>
+				<link
+					rel="preload"
+					href="/assets/fonts/Gafata-Regular.ttf"
+					as="font"
+					type="font/ttf"
+					crossOrigin={`anonymous`}
+				/>
+				<link
+					rel="preload"
+					href="/_next/static/css/e47711e87916f052.css"
+					as="style"
+				/>
+				<link
+					rel="preload"
+					href="/_next/static/css/f29ef599dc320aba.css"
+					as="style"
+				/>
+			</Head>
 			<body
 				className={`
 		

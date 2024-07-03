@@ -1,5 +1,6 @@
 "use client";
 import { Article, Header, CustomPicture as Picture, Text } from "@/components";
+import { hero_hash } from "@/components/constants/hash";
 import Image from "next/image";
 import React from "react";
 
@@ -57,6 +58,7 @@ export const Hero: React.FC<HeroProps> = React.memo(
 						height={1080}
 						fetchPriority={`low`}
 						loading={`eager`}
+						blurDataURL={hero_hash}
 					/>
 				</Picture>
 			</Header>

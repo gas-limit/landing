@@ -23,9 +23,6 @@ export const Scripts = () => {
 						gtag('config', 'G-SEDSYB6798');
 						`}
 						</Script>
-						<link rel="preload" href="/assets/fonts/Gafata-Regular.ttf" as="font" type="font/ttf" crossOrigin={`anonymous`} />
-						<link rel="preload" href="/_next/static/css/e47711e87916f052.css" as="style" />
-						<link rel="preload" href="/_next/static/css/f29ef599dc320aba.css" as="style" />
 					</Head>
 					<Analytics />
 				</>
