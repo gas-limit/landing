@@ -40,7 +40,7 @@ export default function HomePage() {
 		<>
 			<Hero
 				title={`Coven Finance`}
-				subtitle={`Yield optimized index tokens on Fantom`}
+				subtitle={`Yield optimized index tokens on Fantom and Sonic`}
 			/>
 			{/* <ProtocolsPanel /> */}
 			<AboutPanel />

@@ -4,12 +4,12 @@ export const sections: NonNullable<SectionsProps>[] = [
 	{
 		title: "Create Your Index",
 		description:
-			"Mix standard ERC20s, LP tokens, and lending tokens from Fantom's leading protocols such as SpookySwap, Equalizer, Beethoven X, Polter Finance and more. Our platform allows you to create customized index tokens that represent a diversified portfolio, enhancing your investment strategy with a blend of different assets.",
+			"Mix standard ERC20s, LP tokens, lending tokens, and governance tokens from Fantom's leading protocols. Our platform allows you to create customized index tokens that represent a diversified portfolio, enhancing your investments with a blend of different assets and yield farming strategies.",
 	},
 	{
 		title: "Manage with Ease",
 		description:
-			"Rebalance your index with our intuitive swapping features to adjust to market conditions and optimize returns. Our platform's user-friendly interface makes it simple to swap assets within your index, ensuring your portfolio remains aligned with your investment goals and market trends.",
+			"Rebalance your index with our intuitive swapping and governance features to adjust to market conditions and optimize returns. Our platform's user-friendly interface makes it simple to swap assets and participate in governance within your index, ensuring your portfolio remains aligned with your investment goals and market trends.",
 	},
 	{
 		title: "Earn More",
