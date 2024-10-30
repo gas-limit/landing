@@ -1,5 +1,6 @@
 "use client";
 import { Article, Header, CustomPicture as Picture, Text } from "@/components";
+import { Beta } from "@/components/Beta";
 import { hero_hash } from "@/components/constants/hash";
 import Image from "next/image";
 import React from "react";
@@ -39,6 +40,7 @@ export const Hero: React.FC<HeroProps> = React.memo(
 						text={subtitle}
 					/>
 				</Article>
+				<Beta/>
 				<Picture
 					className={`
 						rounded-full h-[50%] w-full p-2 
@@ -46,6 +48,7 @@ export const Hero: React.FC<HeroProps> = React.memo(
 						justify-center object-contain object-center
 					`}
 				>
+					
 					<Particles />
 					<Image
 						className={`
@@ -74,6 +77,7 @@ const Particles = () => {
 			className={`
 				absolute top-0 left-0 
 				right-0 bottom-0 mb-8
+				pointer-events: none
 			`}
 		>
 			{Array.from({ length: 100 }).map((_, index) => (

@@ -1,0 +1,65 @@
+.timelineContainer {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+  
+  .timelineContainer::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+  }
+  
+  .timelineItem {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  .timelineItem:nth-child(odd) {
+    left: 0;
+  }
+  
+  .timelineItem:nth-child(even) {
+    left: 50%;
+  }
+  
+  .timelineItem:nth-child(odd)::after {
+    right: -14px;
+  }
+  
+  .timelineItem:nth-child(even)::after {
+    left: -14px;
+  }
+  
+  .timelineContent {
+    padding: 20px 30px;
+    background: rgb(225 225 225 / 5%);
+    position: relative;
+    border-radius: 6px;
+  }
+  
+  .timelineContent::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 10px;
+    top: 10px;
+  }
+  
+  .timelineItem:nth-child(odd) .timelineContent::after {
+    border-color: transparent transparent transparent #f4f4f4;
+    right: -20px;
+  }
+  
+  .timelineItem:nth-child(even) .timelineContent::after {
+    border-color: transparent #f4f4f4 transparent transparent;
+    left: -20px;
+  }
