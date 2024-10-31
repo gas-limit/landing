@@ -1,8 +1,6 @@
 "use client";
 
 import { useCookieConsentStore } from "@/core/store";
-import { Analytics } from "@vercel/analytics/react";
-import Head from "next/head";
 import Script from "next/script";
 export const Scripts = () => {
 	const { cookieConsent } = useCookieConsentStore();
@@ -10,7 +8,7 @@ export const Scripts = () => {
 		<>
 			{cookieConsent && (
 				<>
-					<Head>
+					<head>
 						<Script
 							src={`https://www.googletagmanager.com/gtag/js?id=G-SEDSYB6798`}
 							strategy="afterInteractive"
@@ -23,8 +21,7 @@ export const Scripts = () => {
 						gtag('config', 'G-SEDSYB6798');
 						`}
 						</Script>
-					</Head>
-					<Analytics />
+					</head>
 				</>
 			)}
 		</>

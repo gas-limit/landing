@@ -4,18 +4,15 @@ import {hero_hash} from "@/components/constants/hash";
 import Image from "next/image";
 import React from "react";
 import {CTAButton} from '@/app/(main)/components'
-
-interface HeroProps extends Partial<Record<string, string | string[]>> {
+interface HeroProps {
+    title: string;
+    subtitle: string;
+    paragraph?: string;
     children?: React.ReactNode;
 }
 
 export const Hero: React.FC<HeroProps> = React.memo(
-    ({title, subtitle, paragraph, children}: {
-        title: string;
-        subtitle: string;
-        paragraph?: string;
-        children?: React.ReactNode;
-    }) => {
+    ({title, subtitle, paragraph, children}) => {
         return (
             <Header
                 className={`

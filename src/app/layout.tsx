@@ -6,6 +6,8 @@ import "@/styles/css/globals.css";
 import "@/styles/sass/globals.scss";
 import { ScrollToTop } from "@/components";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
+
 export const metadata = constructMetadata();
 export const viewport = constructViewport();
 
@@ -66,6 +68,7 @@ export default function RootLayout({
 			>
 				<Providers>
 					{children}
+					<Analytics />
 					<ScrollToTop />
 				</Providers>
 			</body>
