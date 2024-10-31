@@ -18,7 +18,13 @@ export const Navbar = React.memo(() => {
 						"flex items-center justify-between p-5 w-full max-w-screen-xl absolute z-10",
 					)}
 				>
-					<Link href="/" aria-label="Coven Finance">
+					<Link
+						className="sr-only"
+						href="/"
+						rel="noopener noreferrer"
+						target="_self"
+						aria-label="Coven Finance"
+					>
 						<Logo size={`40`} />
 					</Link>
 				</div>

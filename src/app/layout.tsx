@@ -4,6 +4,7 @@ import type { NextWebVitalsMetric } from "next/app";
 import type React from "react";
 import "@/styles/css/globals.css";
 import "@/styles/sass/globals.scss";
+import { ScrollToTop } from "@/components";
 import Head from "next/head";
 export const metadata = constructMetadata();
 export const viewport = constructViewport();
@@ -63,7 +64,10 @@ export default function RootLayout({
 					overflow-x-hidden
 				`}
 			>
-				<Providers>{children}</Providers>
+				<Providers>
+					{children}
+					<ScrollToTop />
+				</Providers>
 			</body>
 		</html>
 	);

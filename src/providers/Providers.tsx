@@ -1,6 +1,6 @@
 "use client";
 
-import { CookieConsent, ScrollToTop, Semantics } from "@/components";
+import { CookieConsent, Semantics } from "@/components";
 import { Events, ThemeProvider } from "@/components/provider";
 import { Scripts } from "@/scripts";
 import type React from "react";
@@ -42,7 +42,6 @@ const SelfClosingComponentStack = () => {
 		<>
 			<CookieConsent />
 			<Scripts />
-			<ScrollToTop />
 		</>
 	);
 };

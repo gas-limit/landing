@@ -1,4 +1,10 @@
-import { Card, EnterAnimation, Hero, Section, Title } from "@/components";
+import {
+	EnterAnimation,
+	Hero,
+	ProtocolCard,
+	Section,
+	Title,
+} from "@/components";
 import type React from "react";
 import { AboutPanel, SectionsPanel } from "./_sections/index";
 
@@ -64,7 +70,7 @@ export default function HomePage() {
 				/>
 				{[...images].map((item, idx: Index) => (
 					<EnterAnimation key={idx}>
-						<Card image={`${item.source}`} name={item.name} />
+						<ProtocolCard image={item.source} name={item.name} />
 					</EnterAnimation>
 				))}
 			</Section>
