@@ -3,19 +3,19 @@ import type { IconType } from "react-icons/lib";
 export const legalRoutes: Record<string, string>[] = [
 	{
 		name: "Terms & Conditions",
-		href: "/terms-and-conditions",
+		href: "/legal/terms",
 	},
 	{
 		name: "Privacy Policy",
-		href: "/privacy-policy",
+		href: "/legal/privacy",
 	},
 	{
 		name: "Cookies",
-		href: "/cookies",
+		href: "/legal/cookies",
 	},
 	{
 		name: "Accessibility",
-		href: "/accessibility",
+		href: "/legal/accessibility",
 	},
 ];
 
@@ -41,15 +41,15 @@ export const footer: FooterProps[] = [
 		"About Us": [
 			{
 				name: "Our Story",
-				url: "/our-story",
+				url: "/about/story",
 			},
 			{
 				name: "Our Team",
-				url: "/our-team",
+				url: "/about/team",
 			},
 			{
 				name: "Careers",
-				url: "/careers",
+				url: "/about/careers",
 			},
 		],
 		"Our Services": [
@@ -73,7 +73,7 @@ export const footer: FooterProps[] = [
 			},
 			{
 				name: "Live Chat",
-				url: "/live-chat",
+				url: "/support/chat",
 			},
 		],
 	},
