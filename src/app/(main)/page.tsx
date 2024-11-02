@@ -35,6 +35,18 @@ export default function HomePage() {
             source: "/assets/images/proto/7.png",
             name: "Polter Finance",
         },
+        {
+            source: "/assets/images/proto/8.webp",
+            name: "Mummy Finance",
+        },
+        {
+            source: "/assets/images/proto/9.png",
+            name: "Shadow Exchange",
+        },
+        {
+            source: "/assets/images/proto/10.png",
+            name: "SwapX",
+        }
     ];
     return (
         <>
